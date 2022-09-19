@@ -1,10 +1,10 @@
 <?php /**
 * Plugin Name: PixxTech LatePoint After Booking Multi Shop Plugin
-* Plugin URI: https://myinstitute.pk/
+* Plugin URI: https://pixxtech.com/
 * Description: PixxTech LatePoint After Booking to send api message to server.
-* Version: 0.1
+* Version: 1
 * Author: Armghan Saeed
-* Author URI: https://myinstitute.pk/
+* Author URI: https://pixxtech.com/
 **/
 
 define( 'PI_API_URL', 'https://pos.pixxtech.com' );

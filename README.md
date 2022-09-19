@@ -8,3 +8,4 @@ This Plugin is used to store data on the database for Pixxtech Multi Shop
 4. Click on Upload Plugin
 5. Select the downloaded Zip file
 6. Activate the Plugin
+

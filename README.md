@@ -2,7 +2,7 @@
 This Plugin is used to store data on the database for Pixxtech Multi Shop
 
 #### Installing a Plugin
-1. Download the Plugin from Github
+1. #739 Download the Plugin from Github
 2. Login to WordPress
 3. Goto Plugins Menu then Add New
 4. Click on Upload Plugin

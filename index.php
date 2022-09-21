@@ -25,7 +25,7 @@ function add_api_page_html() {
     <?php if(count($shops) > 0){ ?>
     <div class="notice notice-success is-dismissible">
         <p>Shops Loaded</p>
-         <!-- <pre>
+        <!-- <pre>
         <?php print_r($pt_options); ?>
     </pre>  -->
     </div>
@@ -39,21 +39,29 @@ function add_api_page_html() {
             // output setting sections and their fields
             // (sections are registered for "wporg", each field is registered to a specific section)
             do_settings_sections( 'pt_booking_api' );
-            foreach($shops as $s){ ?>
-                <div style="margin-bottom:15px;">
-                    <div style='font-weight:bold; margin-bottom:5px;'>
-                        <label><?php echo $s['warehouse_name']; ?></label>
-                    </div>
-                    <div style="margin-bottom:15px;"> 
-                        <label for="shop_<?php echo $s['id']; ?>">Latepoint Location ID: </label>
-                        <input type="text" name='pt_options[<?php echo $s['id']; ?>][location]' id="shop_<?php echo $s['id']; ?>" placeholder="Late Point Location ID" value="<?php echo @$pt_options[$s['id']]['location']; ?>" />
-                    </div>
-                    <div>
-                        <label for="shop_<?php echo $s['id']; ?>">Shop Email: </label>
-                        <input type="email" name='pt_options[<?php echo $s['id']; ?>][email]' placeholder="Shop Email" value="<?php echo @$pt_options[$s['id']]['email']; ?>" />
-                    </div>
-                </div>
-            <?php } 
+            ?>
+        <table class="form-table" role="presentation">
+            <tbody>
+                <?php foreach($shops as $s){ ?>
+                <tr>
+                    <th scope="row"><label><?php echo $s['warehouse_name']; ?></label></th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td scope="row"><label for="shop_<?php echo $s['id']; ?>">Latepoint Location ID: </label></td>
+                    <td><input class="regular-text" type="text" name='pt_options[<?php echo $s['id']; ?>][location]'
+                            id="shop_<?php echo $s['id']; ?>" placeholder="Late Point Location ID"
+                            value="<?php echo @$pt_options[$s['id']]['location']; ?>" /></td>
+                </tr>
+                <tr>
+                    <td scope="row"><label for="shop_<?php echo $s['id']; ?>">Shop Email: </label></td>
+                    <td><input class="regular-text" type="email" name='pt_options[<?php echo $s['id']; ?>][email]'
+                            placeholder="Shop Email" value="<?php echo @$pt_options[$s['id']]['email']; ?>" /></td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+        <?php
             // output save settings button
             submit_button( __( 'Save Settings', 'SaveSettings' ) ); ?>
     </form>
@@ -62,7 +70,7 @@ function add_api_page_html() {
         <p>Shops Not Found</p>
     </div>
     <?php } ?>
-    
+
 </div>
 <?php   } ?>
 

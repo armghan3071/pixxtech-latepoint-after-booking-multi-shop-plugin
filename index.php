@@ -82,7 +82,15 @@ function add_api_page() {
 
 register_activation_hook( __FILE__, 'plugin_create' );
 function plugin_create() {
-    add_option('pt_options', []);
+    //add_option('pt_options', []);
+    if(!is_plugin_active("latepoint") || !is_plugin_active("latepoint-locations")){
+        add_action('admin_notices', function () {
+            echo '<div class="notice notice-error">
+                <p>LatePoint Plugin is required with LatePoint Locations addons.</p>
+            </div>';
+        });
+        wp_die( 'LatePoint Plugin is required with LatePoint Locations addons.' );
+    }
 } 
 
 

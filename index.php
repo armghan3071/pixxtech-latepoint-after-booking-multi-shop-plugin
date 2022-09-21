@@ -23,12 +23,12 @@ function add_api_page_html() {
     ?>
 <div class="wrap">
     <?php if(count($shops) > 0){ ?>
-    <div class="notice notice-success is-dismissible">
+    <!-- <div class="notice notice-success is-dismissible">
         <p>Shops Loaded</p>
-        <!-- <pre>
-        <?php print_r($pt_options); ?>
-    </pre>  -->
-    </div>
+        <pre>
+            <?php print_r($pt_options); ?>
+        </pre>
+    </div> -->
 
     <h1><?php echo esc_html( get_admin_page_title() ) ?></h1>
     <p>PixxTech Api Plugin to store booking data onto the server. For Multiple Shops.</p>
